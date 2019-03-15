@@ -58,7 +58,7 @@ CREATE TABLE DonDatHang(
 	TongThanhTien	INT NOT NULL, 
 	MaTaiKhoan		INT NOT NULL, 
 	MaTinhTrang		INT NOT NULL,
-	CONSTRAINT fk_DonDatHang_TinhTrang FOREIGN KEY (MaTinhTrang) REFERENCES TinhTrang (MaTinhTrang)
+	CONSTRAINT fk_DonDatHang_TinhTrang FOREIGN KEY (MaTinhTrang) REFERENCES TinhTrang (MaTinhTrang),
 	CONSTRAINT fk_DonDatHang_TaiKhoan FOREIGN KEY (MaTaiKhoan) REFERENCES TaiKhoan (MaTaiKhoan)
 );
 GO
