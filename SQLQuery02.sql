@@ -34,7 +34,7 @@ CREATE TABLE TaiKhoan(
 	Email			VARCHAR(64) NOT NULL, 
 	BiXoa			BIT NOT NULL, 
 	MaLoaiTaiKhoan	INT NOT NULL,
-	CONSTRAINT fk_MaLoaiTaiKhoan_LoaiTaiKhoan FOREIGN KEY (MaLoaiTaiKhoan) REFERENCES LoaiTaiKhoan(MaLoaiTaiKhoan)
+	CONSTRAINT fk_TaiKhoan_LoaiTaiKhoan FOREIGN KEY (MaLoaiTaiKhoan) REFERENCES LoaiTaiKhoan (MaLoaiTaiKhoan)
 );
 GO
 CREATE TABLE SanPham(
@@ -48,8 +48,8 @@ CREATE TABLE SanPham(
 	BiXoa			BIT NOT NULL, 
 	MaLoaiSanPham	INT NOT NULL, 
 	MaHangSanXuat	INT NOT NULL,
-	CONSTRAINT fk_MaLoaiSanPham_LoaiSanPham FOREIGN KEY (MaLoaiSanPham) REFERENCES LoaiSanPham(MaLoaiSanPham),
-	CONSTRAINT fk_MaHangSanXuat_HangSanXuat FOREIGN KEY (MaHangSanXuat) REFERENCES HangSanXuat(MaHangSanXuat)
+	CONSTRAINT fk_SanPham_LoaiSanPham FOREIGN KEY (MaLoaiSanPham) REFERENCES LoaiSanPham (MaLoaiSanPham),
+	CONSTRAINT fk_SanPham_HangSanXuat FOREIGN KEY (MaHangSanXuat) REFERENCES HangSanXuat (MaHangSanXuat)
 );
 GO
 CREATE TABLE DonDatHang(
@@ -58,7 +58,8 @@ CREATE TABLE DonDatHang(
 	TongThanhTien	INT NOT NULL, 
 	MaTaiKhoan		INT NOT NULL, 
 	MaTinhTrang		INT NOT NULL,
-	CONSTRAINT fk_MaTinhTrang_TinhTrang FOREIGN KEY (MaTinhTrang) REFERENCES TinhTrang(MaTinhTrang)
+	CONSTRAINT fk_DonDatHang_TinhTrang FOREIGN KEY (MaTinhTrang) REFERENCES TinhTrang (MaTinhTrang)
+	CONSTRAINT fk_DonDatHang_TaiKhoan FOREIGN KEY (MaTaiKhoan) REFERENCES TaiKhoan (MaTaiKhoan)
 );
 GO
 CREATE TABLE ChiTietDonDatHang(
@@ -67,6 +68,6 @@ CREATE TABLE ChiTietDonDatHang(
 	GiaBan					INT NOT NULL, 
 	MaDonDatHang			VARCHAR(9) NOT NULL, 
 	MaSanPham				INT NOT NULL,
-	CONSTRAINT fk_MaDonDatHang_DonDatHang FOREIGN KEY (MaDonDatHang) REFERENCES DonDatHang(MaDonDatHang),
-	CONSTRAINT fk_MaSanPham FOREIGN KEY (MaSanPham) REFERENCES SanPham(MaSanPham)
+	CONSTRAINT fk_ChiTietDonDatHang_DonDatHang FOREIGN KEY (MaDonDatHang) REFERENCES DonDatHang (MaDonDatHang),
+	CONSTRAINT fk_ChiTietDonDatHang_SanPham FOREIGN KEY (MaSanPham) REFERENCES SanPham (MaSanPham)
 );
