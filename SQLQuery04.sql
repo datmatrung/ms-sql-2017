@@ -15,17 +15,17 @@ SELECT MaSanPham, TenSanPham, GiaSanPham
 FROM SanPham
 WHERE TenSanPham LIKE '%a%'
 
--- 4. Lấy danh sách (MaSanPam, TenSanPham, Gia) có giá bán lớn hơn 500000
+-- 4. Lấy danh sách (MaSanPham, TenSanPham, Gia) có giá bán lớn hơn 500000
 SELECT MaSanPham, TenSanPham, GiaSanPham
 FROM SanPham
 WHERE GiaSanPham > 500000
 
--- 5. Lấy danh sách (MaSanPam, TenSanPham, Gia) có giá bán nhỏ hơn hơn 500k
+-- 5. Lấy danh sách (MaSanPham, TenSanPham, Gia) có giá bán nhỏ hơn hơn 500k
 SELECT MaSanPham, TenSanPham, GiaSanPham
 FROM SanPham
 WHERE GiaSanPham < 500000
 
--- 6. Lấy danh sách (MaSanPam, TenSanPham, Gia) có giá bán nhỏ hơn 1tr và lớn hơn hoặc bằng 500k
+-- 6. Lấy danh sách (MaSanPham, TenSanPham, Gia) có giá bán nhỏ hơn 1tr và lớn hơn hoặc bằng 500k
 SELECT MaSanPham, TenSanPham, GiaSanPham
 FROM SanPham
 WHERE 500000 <= GiaSanPham AND GiaSanPham < 1000000
@@ -50,7 +50,7 @@ SELECT s.MaSanPham, s.TenSanPham, s.GiaSanPham, h.TenHangSanXuat
 FROM SanPham s, HangSanXuat h
 WHERE s.MaHangSanXuat = h.MaHangSanXuat AND h.TenHangSanXuat <> 'Lamaze'
 
--- 11. Lấy danh sách (MaSanPham, TenSanPham, Gia, TenHangSanXuat) Thuộc hãng 'Lamze' và 'Revell'
+-- 11. Lấy danh sách (MaSanPham, TenSanPham, Gia, TenHangSanXuat) Thuộc hãng 'Lamaze' và 'Revell'
 SELECT s.MaSanPham, s.TenSanPham, s.GiaSanPham, h.TenHangSanXuat
 FROM SanPham s, HangSanXuat h
 WHERE s.MaHangSanXuat = h.MaHangSanXuat AND (h.TenHangSanXuat = 'Lamaze' OR h.TenHangSanXuat = 'Revell')
@@ -102,7 +102,7 @@ FROM SanPham
 ORDER BY GiaSanPham DESC, SoLuongBan DESC
 
 -- 20. Lấy danh sách (TenLoaiSanPham, TongSoLuongTon) 
---	   Tính tổng danh số lượng tồn của sản phẩm theo từng loại
+--	   Tính tổng số lượng tồn của sản phẩm theo từng loại
 SELECT l.TenLoaiSanPham, SUM(s.SoLuongTon)
 FROM SanPham s, LoaiSanPham l
 WHERE s.MaLoaiSanPham = l.MaLoaiSanPham
