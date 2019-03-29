@@ -103,14 +103,14 @@ ORDER BY GiaSanPham DESC, SoLuongBan DESC
 
 -- 20. Lấy danh sách (TenLoaiSanPham, TongSoLuongTon) 
 --	   Tính tổng số lượng tồn của sản phẩm theo từng loại
-SELECT l.TenLoaiSanPham, SUM(s.SoLuongTon)
+SELECT l.TenLoaiSanPham, SUM(s.SoLuongTon) AS TongSoLuongTon
 FROM SanPham s, LoaiSanPham l
 WHERE s.MaLoaiSanPham = l.MaLoaiSanPham
 GROUP BY l.TenLoaiSanPham
 
 -- 21. Lấy danh sách (TenHangSanXuat, SoLuongBanTrungBinh)
 --     Tính tổng số lượng bán trung bình theo từng hãng
-SELECT h.TenHangSanXuat, AVG(s.SoLuongBan)
+SELECT h.TenHangSanXuat, AVG(s.SoLuongBan) AS TBSoLuongBan
 FROM SanPham s, HangSanXuat h
 WHERE s.MaHangSanXuat = h.MaHangSanXuat
 GROUP BY h.TenHangSanXuat
