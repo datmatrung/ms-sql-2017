@@ -1,14 +1,14 @@
 USE QL_SanPham
 SELECT * FROM DonDatHang
 UPDATE DonDatHang SET MaTinhTrang = 3
--- 1. Liệt danh sách các sản phẩm của datmatrung đã từng mua
+-- 1. Liệt kê danh sách các sản phẩm của datmatrung đã từng mua
 --		Thông tin danh sách: MaSanPham, TenSanPham, SoLuong
-SELECT s.MaSanPham, s.TenSanPham, SUM(c.SoLuong) AS SoLuongDaBan
+SELECT s.MaSanPham, s.TenSanPham, t.TenDangNhap, SUM(c.SoLuong) AS SoLuongDaBan
 FROM TaiKhoan t, SanPham s, DonDatHang d, ChiTietDonDatHang c
 WHERE t.MaTaiKhoan = d.MaTaiKhoan AND d.MaDonDatHang = c.MaDonDatHang
 	AND c.MaSanPham = s.MaSanPham AND t.TenDangNhap = 'datmatrung'
 	AND d.MaTinhTrang = 3
-GROUP BY s.MaSanPham, s.TenSanPham
+GROUP BY s.MaSanPham, s.TenSanPham, t.TenDangNhap
 
 -- 2. Đếm số lượng đơn đặt hàng đã từng mua theo Sản phẩm
 --		Thông tin danh sách: MaSanPham, TenSanPham, Tổng Số ĐĐH
