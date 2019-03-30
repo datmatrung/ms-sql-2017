@@ -1,6 +1,9 @@
 USE QL_SanPham
-SELECT * FROM DonDatHang
+GO
 UPDATE DonDatHang SET MaTinhTrang = 3
+GO
+SELECT * FROM DonDatHang
+
 -- 1. Liệt kê danh sách các sản phẩm của datmatrung đã từng mua
 --		Thông tin danh sách: MaSanPham, TenSanPham, SoLuong
 SELECT s.MaSanPham, s.TenSanPham, t.TenDangNhap, SUM(c.SoLuong) AS SoLuongDaBan
