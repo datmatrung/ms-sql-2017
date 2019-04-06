@@ -37,7 +37,7 @@ FROM NHANVIEN
 WHERE YEAR(NGSINH) BETWEEN 1960 AND 1965
 
 -- 8. Cho biết các nhân viên và năm sinh của nhân viên
-SELECT MANV, HONV + ' ' + TENLOT + ' ' + TENNV AS FULL_NAME, YEAR(NGSINH)
+SELECT MANV, HONV + ' ' + TENLOT + ' ' + TENNV AS FULL_NAME, YEAR(NGSINH) AS TUOI
 FROM NHANVIEN
 
 -- 9. Cho biết các nhân viên và tuổi của nhân viên
