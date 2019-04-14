@@ -22,6 +22,7 @@ WHERE D.MADA = C.MADA AND C.MADA = P.MADA AND C.STT = P.STT
 GROUP BY C.TEN_CONG_VIEC
 
 -- PHẦN 04 - TRUY VẤN LỒNG VÀ GOM NHÓM
+
 -- 37. Cho biết danh sách các đề án (MADA) có: nhân công với họ (HONV) là
 --     'Nguyễn' hoặc có người trưởng phòng chủ trì đề án với họ (HONV) là 'Nguyễn'.
 SELECT DE.MADA, DE.TENDA
@@ -47,7 +48,8 @@ SELECT NV.HONV, NV.TENLOT, NV.TENNV
 FROM NHANVIEN NV
 WHERE NV.MANV NOT IN (SELECT N.MANV
 						FROM NHANVIEN N, THANNHAN T
-						WHERE N.MANV = T.MA_NVIEN)
+						WHERE N.MANV = T.MA_NVIEN
+						GROUP BY N.MANV)
 
 -- 40. Danh sách những trưởng phòng (HONV, TENLOT, TENNV) có tối thiểu một thân nhân.
 SELECT N.HONV, N.TENLOT, N.TENNV
