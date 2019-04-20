@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [QL_DeAn]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Database [QL_DeAn]    Script Date: 4/18/2019 9:10:48 PM ******/
 CREATE DATABASE [QL_DeAn]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -77,7 +77,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'QL_DeAn', N'ON'
 GO
 USE [QL_DeAn]
 GO
-/****** Object:  Table [dbo].[CONGVIEC]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[CONGVIEC]    Script Date: 4/18/2019 9:10:48 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[CONGVIEC](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[DEAN]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[DEAN]    Script Date: 4/18/2019 9:10:48 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[DEAN](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[DIADIEM_PHG]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[DIADIEM_PHG]    Script Date: 4/18/2019 9:10:48 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +127,7 @@ CREATE TABLE [dbo].[DIADIEM_PHG](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 4/18/2019 9:10:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[NHANVIEN](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PHANCONG]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[PHANCONG]    Script Date: 4/18/2019 9:10:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -177,7 +177,7 @@ CREATE TABLE [dbo].[PHANCONG](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PHONGBAN]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[PHONGBAN]    Script Date: 4/18/2019 9:10:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +198,7 @@ CREATE TABLE [dbo].[PHONGBAN](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[THANNHAN]    Script Date: 3/30/2019 9:10:04 PM ******/
+/****** Object:  Table [dbo].[THANNHAN]    Script Date: 4/18/2019 9:10:49 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -233,7 +233,7 @@ INSERT [dbo].[CONGVIEC] ([MADA], [STT], [TEN_CONG_VIEC]) VALUES (30, 1, N'Đào 
 INSERT [dbo].[CONGVIEC] ([MADA], [STT], [TEN_CONG_VIEC]) VALUES (30, 2, N'Đào tạo nhân viên thiết kế')
 INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (1, N'Sản phẩm X', N'Vũng Tàu', 5)
 INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (2, N'Sản phẩm Y', N'Nha Trang', 5)
-INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (3, N'Sản phẩm Z', N'TP HCM', 5)
+INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (3, N'Sản phẩm Z', N'TP HCM', 1)
 INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (10, N'Tin học hóa', N'Hà Nội', 4)
 INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (20, N'Cáp quang', N'TP HCM', 1)
 INSERT [dbo].[DEAN] ([MADA], [TENDA], [DDIEM_DA], [PHONG]) VALUES (30, N'Đào tạo', N'Hà Nội', 4)
@@ -255,9 +255,15 @@ INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'001   
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'003      ', 1, 2, 20)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'003      ', 2, 1, 20)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'004      ', 3, 1, 40)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 1, 1, 5)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 1, 2, 10)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 2, 1, 5)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 2, 2, 10)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 3, 1, 10)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 10, 2, 10)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 20, 1, 10)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 30, 1, 20)
+INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'005      ', 30, 2, 30)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'006      ', 20, 1, 30)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'007      ', 10, 2, 10)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'007      ', 30, 2, 30)
