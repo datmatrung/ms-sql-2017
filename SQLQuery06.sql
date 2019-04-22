@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [QL_DeAn]    Script Date: 4/18/2019 9:10:48 PM ******/
+/****** Object:  Database [QL_DeAn]    Script Date: 4/20/2019 8:37:36 PM ******/
 CREATE DATABASE [QL_DeAn]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -77,7 +77,7 @@ EXEC sys.sp_db_vardecimal_storage_format N'QL_DeAn', N'ON'
 GO
 USE [QL_DeAn]
 GO
-/****** Object:  Table [dbo].[CONGVIEC]    Script Date: 4/18/2019 9:10:48 PM ******/
+/****** Object:  Table [dbo].[CONGVIEC]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +94,7 @@ CREATE TABLE [dbo].[CONGVIEC](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[DEAN]    Script Date: 4/18/2019 9:10:48 PM ******/
+/****** Object:  Table [dbo].[DEAN]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -111,7 +111,7 @@ CREATE TABLE [dbo].[DEAN](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[DIADIEM_PHG]    Script Date: 4/18/2019 9:10:48 PM ******/
+/****** Object:  Table [dbo].[DIADIEM_PHG]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +127,7 @@ CREATE TABLE [dbo].[DIADIEM_PHG](
 ) ON [PRIMARY]
 
 GO
-/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 4/18/2019 9:10:49 PM ******/
+/****** Object:  Table [dbo].[NHANVIEN]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -154,7 +154,7 @@ CREATE TABLE [dbo].[NHANVIEN](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PHANCONG]    Script Date: 4/18/2019 9:10:49 PM ******/
+/****** Object:  Table [dbo].[PHANCONG]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -177,7 +177,7 @@ CREATE TABLE [dbo].[PHANCONG](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PHONGBAN]    Script Date: 4/18/2019 9:10:49 PM ******/
+/****** Object:  Table [dbo].[PHONGBAN]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,7 +198,7 @@ CREATE TABLE [dbo].[PHONGBAN](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[THANNHAN]    Script Date: 4/18/2019 9:10:49 PM ******/
+/****** Object:  Table [dbo].[THANNHAN]    Script Date: 4/20/2019 8:37:36 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -250,6 +250,7 @@ INSERT [dbo].[NHANVIEN] ([MANV], [HONV], [TENLOT], [TENNV], [NGSINH], [DCHI], [P
 INSERT [dbo].[NHANVIEN] ([MANV], [HONV], [TENLOT], [TENNV], [NGSINH], [DCHI], [PHAI], [LUONG], [MA_NQL], [PHG]) VALUES (N'007      ', N'Bùi', N'Ngọc', N'Hằng', CAST(N'1954-03-11' AS Date), N'332 Nguyễn Thái Học, Tp HCM', N'Nữ', 25000, N'001      ', 4)
 INSERT [dbo].[NHANVIEN] ([MANV], [HONV], [TENLOT], [TENNV], [NGSINH], [DCHI], [PHAI], [LUONG], [MA_NQL], [PHG]) VALUES (N'008      ', N'Trần', N'Hồng', N'Quang', CAST(N'1967-09-01' AS Date), N'80 Lê Hồng Phong, Tp HCM', N'Nam', 25000, N'001      ', 4)
 INSERT [dbo].[NHANVIEN] ([MANV], [HONV], [TENLOT], [TENNV], [NGSINH], [DCHI], [PHAI], [LUONG], [MA_NQL], [PHG]) VALUES (N'009      ', N'Đinh', N'Bá', N'Tiên', CAST(N'1960-02-11' AS Date), N'119 Cống Huỳnh, Tp HCM', N'Nam', 30000, N'005      ', 5)
+INSERT [dbo].[NHANVIEN] ([MANV], [HONV], [TENLOT], [TENNV], [NGSINH], [DCHI], [PHAI], [LUONG], [MA_NQL], [PHG]) VALUES (N'010      ', N'Lê', N'Thị', N'An', CAST(N'1970-02-02' AS Date), N'123 CMT8, Tp HCM', N'Nữ', 60000, N'005      ', NULL)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'001      ', 20, 1, 15)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'001      ', 30, 1, 20)
 INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'003      ', 1, 2, 20)
@@ -274,6 +275,7 @@ INSERT [dbo].[PHANCONG] ([MA_NVIEN], [MADA], [STT], [THOIGIAN]) VALUES (N'009   
 INSERT [dbo].[PHONGBAN] ([MAPHG], [TENPHG], [TRPHG], [NG_NHANCHUC]) VALUES (1, N'Quản lý', N'006      ', CAST(N'1971-06-19' AS Date))
 INSERT [dbo].[PHONGBAN] ([MAPHG], [TENPHG], [TRPHG], [NG_NHANCHUC]) VALUES (4, N'Điều hành', N'008      ', CAST(N'1985-01-01' AS Date))
 INSERT [dbo].[PHONGBAN] ([MAPHG], [TENPHG], [TRPHG], [NG_NHANCHUC]) VALUES (5, N'Nghiên cứu', N'005      ', CAST(N'1978-05-22' AS Date))
+INSERT [dbo].[PHONGBAN] ([MAPHG], [TENPHG], [TRPHG], [NG_NHANCHUC]) VALUES (6, N'Bán hàng', NULL, NULL)
 INSERT [dbo].[THANNHAN] ([MA_NVIEN], [TENTN], [PHAI], [NGSINH], [QUANHE]) VALUES (N'001      ', N'Minh', N'Nam', CAST(N'1932-02-29' AS Date), N'Vợ chồng')
 INSERT [dbo].[THANNHAN] ([MA_NVIEN], [TENTN], [PHAI], [NGSINH], [QUANHE]) VALUES (N'005      ', N'Khang', N'Nam', CAST(N'1973-10-25' AS Date), N'Con trai')
 INSERT [dbo].[THANNHAN] ([MA_NVIEN], [TENTN], [PHAI], [NGSINH], [QUANHE]) VALUES (N'005      ', N'Khương', N'Nữ', CAST(N'1948-05-03' AS Date), N'Vợ chồng')
