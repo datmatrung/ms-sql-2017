@@ -87,12 +87,10 @@ WHERE N.MA_NQL = Q.MANV AND N.PHG = P.MAPHG AND P.TRPHG = T.MANV
 
 -- 17. Tên những nhân viên phòng số 5 có tham gia vào đề án "Sản phẩm X"
 --     và nhân viên này do "Nguyễn Thanh Tùng" quản lý trực tiếp.
-SELECT N.HONV + ' ' + N.TENLOT + ' ' + N.TENNV AS NHANVIEN
-FROM NHANVIEN N, NHANVIEN Q, PHONGBAN P, DEAN D, PHANCONG PC
-WHERE N.MA_NQL = Q.MANV AND N.PHG = P.MAPHG
-	  AND N.MANV = PC.MA_NVIEN AND PC.MADA = D.MADA
-	  AND P.MAPHG = 5 AND (Q.HONV + ' ' + Q.TENLOT + ' ' + Q.TENNV) = N'Nguyễn Thanh Tùng'
-GROUP BY (N.HONV + ' ' + N.TENLOT + ' ' + N.TENNV)
+SELECT N.HONV + ' ' + N.TENLOT  + ' ' + N.TENNV AS HOTEN
+FROM NHANVIEN N, NHANVIEN Q, DEAN D, PHANCONG P
+WHERE N.PHG = 5 AND D.TENDA = N'Sản phẩm X' AND (Q.HONV + ' ' + Q.TENLOT  + ' ' + Q.TENNV) = N'Nguyễn Thanh Tùng'
+AND N.MA_NQL = Q.MANV AND N.MANV = P.MA_NVIEN AND P.MADA = D.MADA
 
 -- 18. Cho biết tên các đề án mà nhân viên Đinh Bá Tiến đã tham gia.
 SELECT D.TENDA
