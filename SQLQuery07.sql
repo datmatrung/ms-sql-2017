@@ -89,12 +89,12 @@ WHERE N.MA_NQL = Q.MANV AND N.PHG = P.MAPHG AND P.TRPHG = T.MANV
 --     và nhân viên này do "Nguyễn Thanh Tùng" quản lý trực tiếp.
 SELECT N.HONV + ' ' + N.TENLOT  + ' ' + N.TENNV AS HOTEN
 FROM NHANVIEN N, NHANVIEN Q, DEAN D, PHANCONG P
-WHERE N.PHG = 5 AND D.TENDA = N'Sản phẩm X' AND (Q.HONV + ' ' + Q.TENLOT  + ' ' + Q.TENNV) = N'Nguyễn Thanh Tùng'
-AND N.MA_NQL = Q.MANV AND N.MANV = P.MA_NVIEN AND P.MADA = D.MADA
+WHERE N.PHG = 5 AND D.TENDA = N'Sản phẩm X' 
+	AND (Q.HONV + ' ' + Q.TENLOT  + ' ' + Q.TENNV) = N'Nguyễn Thanh Tùng'
+	AND N.MA_NQL = Q.MANV AND N.MANV = P.MA_NVIEN AND P.MADA = D.MADA
 
 -- 18. Cho biết tên các đề án mà nhân viên Đinh Bá Tiến đã tham gia.
 SELECT D.TENDA
-FROM NHANVIEN N, PHANCONG P, CONGVIEC C, DEAN D
-WHERE N.MANV = P.MA_NVIEN AND P.MADA = C.MADA 
-	  AND P.STT = C.STT AND C.MADA = D.MADA
-	  AND (N.HONV + ' ' + N.TENLOT + ' ' + N.TENNV) = N'Đinh Bá Tiên'
+FROM NHANVIEN N, PHANCONG P, DEAN D
+WHERE (N.HONV + ' ' + N.TENLOT  + ' ' + N.TENNV) = N'Đinh Bá Tiên' 
+	AND N.MANV = P.MA_NVIEN AND P.MADA = D.MADA
