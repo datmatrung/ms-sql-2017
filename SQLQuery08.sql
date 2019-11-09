@@ -49,10 +49,10 @@ GROUP BY N.HONV, N.TENNV, N.MANV
 
 -- 27. Với mỗi nhân viên, cho biết số lượng nhân viên mà nhân viên đó quản
 -- lý trực tiếp.
-SELECT Q.MANV, Q.HONV, Q.TENNV, COUNT(N.MANV) AS SoNhanVien
-FROM NHANVIEN N, NHANVIEN Q
-WHERE Q.MANV = N.MA_NQL
-GROUP BY Q.MANV, Q.HONV, Q.TENNV
+SELECT Q.TENNV, COUNT(N.MANV) AS SONV
+FROM NHANVIEN N RIGHT JOIN NHANVIEN Q
+ON N.MA_NQL = Q.MANV
+GROUP BY Q.TENNV
 
 
 -- 28. Với mỗi phòng ban, liệt kê tên phòng ban và lương trung bình của
